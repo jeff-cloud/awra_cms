@@ -311,13 +311,15 @@ awraClone() {
         git reset --hard "origin/${AWRAMS_VERSION}" || echo "${red}Failed to clone, proceeding anyway${reset}"
         git pull origin "${AWRAMS_VERSION}" || echo "${red}Failed to clone, proceeding anyway${reset}"
     elif [ -d "${REPO_PATH}" ]; then
-        echo "${red}WARNING! ANY CHANGES MADE TO THE FILES WITHIN AWRAMS_CM WILL BE RESET${reset}"
-        read -p "${green}[AWRACMS] You have already cloned AWRACMS. Would you like to download the latest changes? [Yes/No]: ${reset} " awraExists
-        if [[ "${awraExists}" == [Yy][Ee][Ss] ]]; then
-            echo "${green}[AWRACMS] Resetting head and pulling latest changes${reset}"
-            git -C "${REPO_PATH}" reset --hard "origin/${AWRAMS_VERSION}" || echo "${red}Failed to clone, proceeding anyway${reset}"
-            git -C "${REPO_PATH}" pull origin "${AWRAMS_VERSION}" || echo "${red}Failed to clone, proceeding anyway${reset}"
-        fi
+        #echo "${red}WARNING! ANY CHANGES MADE TO THE FILES WITHIN AWRAMS_CM WILL BE RESET${reset}"
+        # Jeff changes
+        echo "${red}REPO found. Use existing repo${reset}"
+        #read -p "${green}[AWRACMS] You have already cloned AWRACMS. Would you like to download the latest changes? [Yes/No]: ${reset} " awraExists
+        #if [[ "${awraExists}" == [Yy][Ee][Ss] ]]; then
+        #    echo "${green}[AWRACMS] Resetting head and pulling latest changes${reset}"
+        #    git -C "${REPO_PATH}" reset --hard "origin/${AWRAMS_VERSION}" || echo "${red}Failed to clone, proceeding anyway${reset}"
+        #    git -C "${REPO_PATH}" pull origin "${AWRAMS_VERSION}" || echo "${red}Failed to clone, proceeding anyway${reset}"
+        #fi
     fi
     if git clone -b "${AWRAMS_VERSION}" "${AWRACMS_REPOSITORY}" "${REPO_PATH}/"; then
         echo "${green}[GIT] Cloned awracms${reset}"

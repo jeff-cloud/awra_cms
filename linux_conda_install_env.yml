@@ -8,9 +8,9 @@ dependencies:
   - numpy=1.12
   - scipy=1.1
   - matplotlib=2
-  - anaconda::pandas=0.19
+  - anaconda::pandas=0.20
   - h5py=2
-  - anaconda::cffi=1.9.*
+  - anaconda::cffi=1.14
   - libnetcdf=4.6
   - netcdf4=1
   - libgdal=2.3
