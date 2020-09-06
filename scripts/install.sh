@@ -526,7 +526,9 @@ createActivationScript() {
 
 # Run python nosetests to ensure installation is successful
 runTests() {
-    if [[ "${CLONE_DATA}" == [Tt][Rr][Uu][Ee] ]]; then
+	if [[ "${SKIP_TEST}" == [Tt][Rr][Uu][Ee] ]]; then
+		echo "Skipping tests...."
+	elif [[ "${CLONE_DATA}" == [Tt][Rr][Uu][Ee] ]]; then
         . "${REPO_PATH}/activation"
         echo "${green}[AWRACMS] Running tests${reset}"
         cd "${REPO_PATH}/packages"
