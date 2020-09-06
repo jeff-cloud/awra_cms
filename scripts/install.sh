@@ -577,7 +577,7 @@ install() {
     retry createActivationScript
     # retry runTests
     # delete cache of pip
-    [ -d "${HOME}/.cache/pip" ] && rm -rf "${HOME}/.cache/pip"
+    # [ -d "${HOME}/.cache/pip" ] && rm -rf "${HOME}/.cache/pip"
 }
 
 # ------------------------------------------------------------
